@@ -1,0 +1,129 @@
+		PSQL 
+
+sudo su postgres
+psql - terminal enter
+sudo psql -U postgres
+
+\l -  list database
+\c db_name - connect db
+\du - role list
+psql -h localhost -p port_number -U postgres   - connect docker postgres
+\dt - table list
+\d table_name - table data . column
+\d+ table_name - table info
+CREATE DATABASE database_name OWNER role_name - create database with role.
+
+		MONGODB
+mongo --  enter mongo		
+use dbname -- create db.
+show dbs -- show database storage.
+ db.createUser(
+  {
+    user: "mrb",
+    pwd: "0224",
+    roles: [ { role: "readWrite", db: "userdb" } ]
+  }
+) -- add user db and pwd
+show collections -- show collection
+db.dropDatabase() -- drop database.
+db.createCollection("collectionName") -- create collection.
+db.collectionName.find().pretty() - show collection data
+  	
+		
+		
+		GOLANG 
+		
+go mod vendor - vendoreid copy to folder.
+go mod tidy - 	Add missing modules and remove unless modules.	
+
+
+	    GOLANG INSTALL FROM BYNARY FILE
+		
+		
+sudo rm -rf /usr/local/go -- remove old GOROOT files
+sudo rm -rf /home/mrb/go -- remove old GOPATH files
+sudo tar -xzf go*.linux-amd64.tar.gz -- exact archive file
+sudo mv go /home/mrb -- move go folder for GOPATH
+sudo mv go /usr/local -- move go folder for GOROOT
+gedit ~/.profile 
+gedit ~/.bashrc
+			 -- open file.
+ 		-- add file go settings.to end line.	--
+  
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$PATH
+
+or
+
+export PATH=$PATH:/usr/local/go/bin
+PATH=$(go env GOPATH)/bin:$PATH
+export GOROOT=/usr/local/go		
+		
+		
+		DOCKER	
+		
+docker pull postgres- add postgres tools
+docker pull mongo - add mongo tools
+docker images - show images
+docker run --name ecommerce -e POSTGRES_PASSWORD=0224 -d -p myuseport:serverport postgres
+docker run -d -p 2717:27017 --name mymongo mongo:lastest -- mongo start docker.
+docker exec -it container_name bash - enter container
+docker ps - docker containers 
+docker stop container_id - stop docker container
+docker start container_id - start docker container
+
+
+		GO MIGRATION
+		
+migrate create -ext sql -dir path -seq init_schema - init go migration	
+migrate -path ./PATH -database 'postgresql://USERNAME:PASSWORD@localhost:PORT/DATABASE_NAME?sslmode=disable'   UP OR DOWN - migration import
+migrate create -ext sql -dir path -seq version 2 - 2nd schema init
+migrate create -ext sql -dir path -seq data_insert - data-insert file init
+		GIT SHELL
+		
+git config --list  - git sozlamalarini ko'rish.
+git config user.name - get git username
+git config --global user.name 'git  username'  -- enter git user name
+git config --global user.email 'git email' -- enter git user email
+git init - yangi loyiha yaratish.
+git status - git holati files
+git add . - git add all file
+git commit -m 'message' - git commit add.
+git log - show commits
+git checkout  . - cancel change project file.		
+git checkout git commit id - go back project the commit . go log get commit id.
+git checkout master - go back current version.
+git reset . -- undo git add . 
+git commit -a -m 'commit' - git add && git commit -m ''
+git commit --amend - lastest git commit change.
+git branch - show branchs.
+git branch branchName - add git branch.
+git branch -M main - init branch.
+git checkout branchName - git branch change. 
+git merge branchName - add code to current branch  from branchName
+git remote add origin github link - git add initial to github.com
+git push -u origin master - code add github.com.
+git remote -v - show github link
+git pull origin master - get code from github.com
+ssh-keygen -t rsa -b 4096 -C "email" - create ssh code.
+cat .ssh/id_rsa.pub - show ssh code.
+ssh-add -l - show ssh list .
+git remote set-url origin github link - change github remote
+ 
+ 
+		 SWAGGER - SWAGGO
+	 
+swag help - check swag aviable
+swag init - initialize swaggo
+swag init -g path/file -- file swag generation
+swag init -g path/file -o path2 - path2 generation swaggo
+  		
+  		
+  		PROTOC BUF
+sudo apt-get install  protobuf-compiler libprotobuf-dev  -- install protoc buf.
+go install github.com/bufbuild/buf/cmd/buf@v1.0.0-rc12  -- install buf
+"github.com/golang/protobuf/proto"
+protoc --go_out=. *.proto
+
+ 
