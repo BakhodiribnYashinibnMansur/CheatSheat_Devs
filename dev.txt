@@ -14,6 +14,7 @@ psql -h localhost -p port_number -U postgres   - connect docker postgres
 CREATE DATABASE database_name OWNER role_name - create database with role.
 
 		MONGODB
+		
 mongo --  enter mongo		
 use dbname -- create db.
 show dbs -- show database storage.
@@ -67,7 +68,7 @@ export GOROOT=/usr/local/go
 docker pull postgres- add postgres tools
 docker pull mongo - add mongo tools
 docker images - show images
-docker run --name ecommerce -e POSTGRES_PASSWORD=0224 -d -p myuseport:serverport postgres
+docker run --name ecommerce -e POSTGRES_PASSWORD=0224 -d -p myuseport:5432 postgres
 docker run -d -p 2717:27017 --name mymongo mongo:lastest -- mongo start docker.
 docker exec -it container_name bash - enter container
 docker ps - docker containers 
@@ -77,8 +78,8 @@ docker start container_id - start docker container
 
 		GO MIGRATION
 		
-migrate create -ext sql -dir path -seq init_schema - init go migration	
-migrate -path ./PATH -database 'postgresql://USERNAME:PASSWORD@localhost:PORT/DATABASE_NAME?sslmode=disable'   UP OR DOWN - migration import
+migrate create -ext sql -dir SCHEMA -seq init_schema - init go migration	
+migrate -path ./schema -database 'postgresql://postgres:0224@localhost:PORT/DATABASE_NAME?sslmode=disable'   UP OR DOWN - migration import
 migrate create -ext sql -dir path -seq version 2 - 2nd schema init
 migrate create -ext sql -dir path -seq data_insert - data-insert file init
 		GIT SHELL
