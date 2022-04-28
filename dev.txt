@@ -77,7 +77,11 @@ docker start container_id - start docker container
 
 
 		GO MIGRATION
-		
+curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | apt-key add -
+echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list
+apt-get update
+apt-get install -y migrate
+
 migrate create -ext sql -dir SCHEMA -seq init_schema - init go migration	
 migrate -path ./schema -database 'postgresql://postgres:0224@localhost:PORT/DATABASE_NAME?sslmode=disable'   UP OR DOWN - migration import
 migrate create -ext sql -dir path -seq version 2 - 2nd schema init
