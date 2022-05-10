@@ -75,13 +75,20 @@ docker ps - docker containers
 docker stop container_id - stop docker container
 docker start container_id - start docker container
 
-
+docker sudo:
+Create the docker group if it does not exist
+sudo groupadd docker -- Add your user to the docker group.
+sudo usermod -aG docker $USER -- Run the following command or Logout and login again and run (that doesn't work you may need to reboot your machine first)
+newgrp docker -- Check if docker can be run without root
+sudo chmod 666 /var/run/docker.sock		
+		
 		GO MIGRATION
 		
 migrate create -ext sql -dir SCHEMA -seq init_schema - init go migration	
 migrate -path ./schema -database 'postgresql://postgres:0224@localhost:PORT/DATABASE_NAME?sslmode=disable'   UP OR DOWN - migration import
 migrate create -ext sql -dir path -seq version 2 - 2nd schema init
 migrate create -ext sql -dir path -seq data_insert - data-insert file init
+
 		GIT SHELL
 		
 git config --list  - git sozlamalarini ko'rish.
@@ -115,7 +122,7 @@ git remote set-url origin github link - change github remote
  
  
 		 SWAGGER - SWAGGO
-	 
+go install github.com/swaggo/swag/cmd/swag@latest
 swag help - check swag aviable
 swag init - initialize swaggo
 swag init -g path/file -- file swag generation
@@ -130,3 +137,14 @@ buf config init -- setup config init buf.
 sudo chmod +x ./scripts/gen-proto.sh  -- cli file permission admin.
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest -- grpc protoc install
  
+ 		HEROKU
+ 		
+heroku login 
+heroku create
+heroku git:remote -a herokuAPPname -- add heroku repo. 
+git push heroku main
+heroku run bash 
+heroku logs --tail
+heroku addons -- show db...
+
+
