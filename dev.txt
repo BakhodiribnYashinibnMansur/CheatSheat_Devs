@@ -150,5 +150,6 @@ git push heroku main
 heroku run bash 
 heroku logs --tail
 heroku addons -- show db...
+heroku local -- go build local app
 
 
