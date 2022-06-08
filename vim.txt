@@ -1,0 +1,60 @@
+	VIM TUTOR
+		
+NORMAL MODE ###
+		
+ Navigation :
+ 	k --- up 
+ 	j --- down
+ 	l --- right
+ 	h --- left
+	ex: 9l --- 9 letter right
+ 	w --- next word locate first letter
+ 	b --- last word locate first letter
+ 	e --- next word loacte ended letter
+ 	ge --- previous word locate ended letter
+ 	0 --- start of line 0.
+ 	^ --- locate start which  line of text
+ 	$ --- locate end which line of text
+ 	fx --- find x charakter next
+ 	Fx --- find x charakter previous
+ 	gg --- first line -- ]]
+ 	G --- ended line -- [[
+ 	nG --- go to n line (53G)
+ 	
+ Window :
+ 	zz --- center scroll current cursor locate
+ 	zb --- top scroll current cursor locate
+ 	zt --- bottom scroll current cursor locate
+ 	H --- move to top of screen
+ 	M --- move to middle of screen
+ 	L --- move to bottom of screen
+ 				
+VISUAL MODE ###
+
+	v  --- enter visual mode
+	
+	
+COMMAND LINE MODE ####
+	: --- enter command line mode.
+	:qa! --- Close all files, abandon changes
+	:w --- Save
+	:wq / :x --- Save and close file
+	:q --- Close file
+	:q! --- Close file, abandon changes
+	ZZ --- Save and quit
+	ZQ --- Quit without checking changes Close file
+
+EDITING MODE ####
+	u --- undo
+	Ctrl + r - redo
+	i --- insert left. 
+	a --- insert right.
+	I --- begin line insert.
+	A --- end line insert.
+	o ---bottom enter.
+	O --- up enter .
+	x --- delete right.(7x)
+	s --- delete letter and insert mode.
+	  
+	  	
+	

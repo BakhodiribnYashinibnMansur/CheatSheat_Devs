@@ -80,9 +80,10 @@ Create the docker group if it does not exist
 sudo groupadd docker -- Add your user to the docker group.
 sudo usermod -aG docker $USER -- Run the following command or Logout and login again and run (that doesn't work you may need to reboot your machine first)
 newgrp docker -- Check if docker can be run without root
-sudo chmod 666 /var/run/docker.sock		
+sudo chmod 666 /var/run/docker.sock	--- unsudo 	
 		
 		GO MIGRATION
+		
 curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | apt-key add -
 echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list
 apt-get update
@@ -126,6 +127,7 @@ git remote set-url origin github link - change github remote
  
  
 		 SWAGGER - SWAGGO
+		 
 go install github.com/swaggo/swag/cmd/swag@latest
 swag help - check swag aviable
 swag init - initialize swaggo
@@ -134,6 +136,7 @@ swag init -g path/file -o path2 - path2 generation swaggo
   		
   		
   		PROTOC BUF
+  		
 sudo apt-get install  protobuf-compiler libprotobuf-dev  -- install protoc buf.
 go install github.com/bufbuild/buf/cmd/buf@v1.0.0-rc12  -- install buf
 buf config init -- setup config init buf. 
@@ -152,4 +155,5 @@ heroku logs --tail
 heroku addons -- show db...
 heroku local -- go build local app
 
-
+	
+	
