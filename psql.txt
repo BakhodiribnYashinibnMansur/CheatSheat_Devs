@@ -5,4 +5,48 @@ FROM
    customer; 
    
    || ' ' || -- add two column.
+
+2.SELECT column_name or exeption (AS) alias_name
+FROM table_name;  -- ustunni labaqlash.
+
+3.SELECT
+	first_name,
+	last_name
+FROM
+	customer
+ORDER BY
+	first_name ASC,
+	last_name DESC;
+	
+4.SELECT 
+	first_name,
+	LENGTH(first_name) len
+FROM
+	customer
+ORDER BY 
+	len DESC;
+
+5.SELECT num
+FROM sort_demo
+ORDER BY num NULLS LAST ;
+
+SELECT num
+FROM sort_demo
+ORDER BY num NULLS FIRST;	
+
+6.SELECT
+   DISTINCT column1, column2
+FROM
+   table_name; --- remove duplicate rows
    
+ SELECT
+   DISTINCT ON (column1) column_alias,
+   column2
+FROM
+   table_name
+ORDER BY
+   column1,
+   column2;
+   
+7.	
+

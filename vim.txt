@@ -55,6 +55,20 @@ EDITING MODE ####
 	O --- up enter .
 	x --- delete right.(7x)
 	s --- delete letter and insert mode.
-	  
+	dd --- delete line enterly.(13dd)
+	d$ --- delete line.
+	D --- delete line ritght to end of line.
+	d^ --- delete current position to start line.
+	cc --- delete line and insert mode.
+	dw --- delete right word.
+	daw --- delete word.
+	cw --- delete word and insert mode.
+	dG --- delete below all code. 
+	dg --- delete up all code.
+	di --- delete '' or "" or `` in text delete. 
+	ci --- delete '' or "" or `` in text delete and insert mode. 
+	yw --- copy word. 
+	yy --- copy line. 
+	p --- paste. 
 	  	
 	

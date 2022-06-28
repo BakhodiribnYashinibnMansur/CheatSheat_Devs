@@ -37,7 +37,8 @@ db.collectionName.find().pretty() - show collection data
 go mod vendor - vendoreid copy to folder.
 go mod tidy - 	Add missing modules and remove unless modules.	
 go mod edit -replace google.golang.org/protobuf@v1.27.1=github.com/protocolbuffers/protobuf-go@v1.27.1  -- update package
-
+go build -o appName .  - build.
+go fmt ./... - check code in formatter.
 
 	    GOLANG INSTALL FROM BYNARY FILE
 		
@@ -62,7 +63,9 @@ export PATH=$PATH:/usr/local/go/bin
 PATH=$(go env GOPATH)/bin:$PATH
 export GOROOT=/usr/local/go		
 		
-		
+echo $GOPATH
+echo $GOROOT
+
 		DOCKER	
 		
 docker pull postgres- add postgres tools
@@ -139,10 +142,12 @@ swag init -g path/file -o path2 - path2 generation swaggo
   		
 sudo apt-get install  protobuf-compiler libprotobuf-dev  -- install protoc buf.
 go install github.com/bufbuild/buf/cmd/buf@v1.0.0-rc12  -- install buf
-buf config init -- setup config init buf. 
+----protobuf config init -- setup config init buf. 
 "github.com/golang/protobuf/proto"  -- protoc buf link
 sudo chmod +x ./scripts/gen-proto.sh  -- cli file permission admin.
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest -- grpc protoc install
+sudo apt-get install gogoprotobuf 
+ 
  
  		HEROKU
  		
@@ -155,5 +160,11 @@ heroku logs --tail
 heroku addons -- show db...
 heroku local -- go build local app
 
+	
+		GIT MODULES
+git submodule add github.com link. - create sub module
+git submodule update
+git submodule update --remote --merge 
+git config --global submodule.recurse true -- auto update 
 	
 	
