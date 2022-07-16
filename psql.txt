@@ -48,5 +48,11 @@ ORDER BY
    column1,
    column2;
    
-7.	
+7.SELECT
+	first_name,
+	last_name
+FROM
+	customer
+WHERE 
+	first_name IN ('Ann','Anne','Annie');	
 

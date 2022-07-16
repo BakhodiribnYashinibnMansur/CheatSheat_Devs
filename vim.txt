@@ -1,5 +1,7 @@
 	VIM TUTOR
-		
+	
+sudo apt-get install -y xclip	
+
 NORMAL MODE ###
 		
  Navigation :
@@ -14,12 +16,24 @@ NORMAL MODE ###
  	ge --- previous word locate ended letter
  	0 --- start of line 0.
  	^ --- locate start which  line of text
+ 	_ --- move to paraghif head.
+ 	g_ --- locate end current line.
  	$ --- locate end which line of text
  	fx --- find x charakter next
  	Fx --- find x charakter previous
  	gg --- first line -- ]]
  	G --- ended line -- [[
  	nG --- go to n line (53G)
+ 	fgo --- search next go character in line
+ 	Fgo --- search old go character in line
+ 	; --- next search word.
+ 	, --- old search word.
+ 	[ --- go first line .
+ 	] --- go end line. 
+ 	{ --- go next near space line.
+ 	} --- go last near space line. 
+ 	/x --- search x from file forward
+ 	?x --- search x from file backward
  	
  Window :
  	zz --- center scroll current cursor locate
@@ -32,7 +46,8 @@ NORMAL MODE ###
 VISUAL MODE ###
 
 	v  --- enter visual mode
-	
+	Shift + v --- mark currentline.
+	 
 	
 COMMAND LINE MODE ####
 	: --- enter command line mode.
@@ -45,6 +60,7 @@ COMMAND LINE MODE ####
 	ZQ --- Quit without checking changes Close file
 
 EDITING MODE ####
+	jk --- insert to normal mode.
 	u --- undo
 	Ctrl + r - redo
 	i --- insert left. 
@@ -59,16 +75,29 @@ EDITING MODE ####
 	d$ --- delete line.
 	D --- delete line ritght to end of line.
 	d^ --- delete current position to start line.
+	ex::: d0 d$ c$ d0
 	cc --- delete line and insert mode.
 	dw --- delete right word.
-	daw --- delete word.
+	db --- delete left word.
+	daw --- delete a word.
+	das --- delete a sentense
+	dab --- delete () insite charakter
+	daB --- delet {} insite charakter.
 	cw --- delete word and insert mode.
 	dG --- delete below all code. 
 	dg --- delete up all code.
 	di --- delete '' or "" or `` in text delete. 
-	ci --- delete '' or "" or `` in text delete and insert mode. 
+	ci --- delete '' or "" or `` in text delete and insert mode.
+	y --- copy form visual mode. 
 	yw --- copy word. 
 	yy --- copy line. 
 	p --- paste. 
+	d/x --- cursore current position delete to x.
+	Ctrl Shift Arrow Up / Down --- multiple cursore.
+	
+REPLACE MODE ###
+	
+	Shift + r --- enter replace mode
+	rx --- change to x only one character
 	  	
 	
